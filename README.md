@@ -23,5 +23,5 @@ Proyek ini menggunakan pustaka **SymPy** untuk perhitungan simbolik dan **Matplo
 1. **Install Python:** Pastikan Anda memiliki Python versi 3.x. Anda dapat mengunduh Python dari situs resmi Python.
 2. **Install Project:** Jalankan **pip install CalculusPython8** di terminal.
 3. **Import:** Setelah instalasi, Anda dapat mengimpor semua fungsi kalkulus yang tersedia dengan satu baris kode:
-   **from CalculusPython8 import grafik_fungsi, domain_dan_range, cek_kontinuitas, hitung_limit, fungsi_trigonometri**
+   **from CalculusPython8 import grafik_fungsi, domain_dan_range, kontinuitas, hitung_limit, trigonometri**
 
