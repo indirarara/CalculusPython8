@@ -24,5 +24,4 @@ Proyek ini menggunakan pustaka **SymPy** untuk perhitungan simbolik dan **Matplo
 2. **Install Project:** Jalankan **pip install CalculusPython8** di terminal.
 3. **Import:** Setelah instalasi, Anda dapat mengimpor semua fungsi kalkulus yang tersedia dengan satu baris kode:
    **from CalculusPython8 import grafik_fungsi, domain_dan_range, cek_kontinuitas, hitung_limit, fungsi_trigonometri**
-5. **Limit:** Menghitung limit fungsi saat mendekati titik tertentu dari sisi kiri dan kanan.
-6. **Trigonometri:** Menghitung berbagai nilai fungsi trigonometri seperti sinus, cosinus, dan tangen.
+
