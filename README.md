@@ -66,3 +66,5 @@ from trigonometri.module_trigonometri import hitung_trigonometri_dengan_kuadran
 hitung_trigonometri_dengan_kuadran(30, 2)
 ```
 
+## Tentang Modul
+
