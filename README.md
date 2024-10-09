@@ -22,6 +22,47 @@ Proyek ini menggunakan pustaka **SymPy** untuk perhitungan simbolik dan **Matplo
 
 1. **Install Python:** Pastikan Anda memiliki Python versi 3.x. Anda dapat mengunduh Python dari situs resmi Python.
 2. **Install Project:** Jalankan **pip install CalculusPython8** di terminal.
-3. **Import:** Setelah instalasi, Anda dapat mengimpor semua fungsi kalkulus yang tersedia dengan satu baris kode:
-   **from CalculusPython8 import grafik_fungsi, domain_dan_range, kekontinuan, limit_fungsi, trigonometri**
+   
+```bash
+pip install CalculusPython8
+```
+
+3. **Jika ingin menjalankan modul mencari grafik:**
+   
+```python
+from grafik_fungsi.module_grafik import create_plot
+create_plot((0, 2 * np.pi), np.sin)
+```
+4. **Jika ingin menjalankan modul mencari domain dan range:**
+   
+```python
+from domain_range.module_domain_dan_range import analisis_fungsi
+domain, f_range = analisis_fungsi("x**2")
+```
+5. **Jika ingin menjalankan modul mencari kontinu:**
+   
+```python
+from kekontinuan.module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
+print(is_continuous(lambda x: x**2, 1))
+
+print(check_continuity_interval(lambda x: 1/x if x != 0 else None, -1, 1))
+
+points_to_check = [-1, 0, 1, 2]
+print(check_continuity_at_points(lambda x: 1/x if x != 0 else None, points_to_check))
+
+print(is_continuous_everywhere(lambda x: x**2, (-10, 10)))
+```
+6. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
+
+ ```python
+from limit.module_limit import hitung_limit_kanan_kiri
+limit_kanan, limit_kiri = hitung_limit_kanan_kiri((x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1, 1)
+```
+
+7. **Jika ingin menjalankan modul mencari trigonometri:**
+   
+ ```python
+from trigonometri.module_trigonometri import hitung_trigonometri_dengan_kuadran
+hitung_trigonometri_dengan_kuadran(30, 2)
+```
 
