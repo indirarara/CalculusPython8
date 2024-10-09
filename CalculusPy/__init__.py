@@ -1,0 +1,1 @@
+from domain_range.module_domain_dan_range import analisis_fungsi
