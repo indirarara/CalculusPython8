@@ -30,45 +30,28 @@ pip install CalculusPython8
    
 ```python
 from grafik_fungsi.module_grafik import create_plot
-create_plot((0, 2 * np.pi), np.sin)
 ```
 4. **Jika ingin menjalankan modul mencari domain dan range:**
    
 ```python
 from domain_range.module_domain_dan_range import analisis_fungsi
-domain, f_range = analisis_fungsi("x**2 + 3*x - 4")
-print(f"Domain: {domain}")
-print(f"Range: {f_range}")
 ```
 
 5. **Jika ingin menjalankan modul mencari kontinu:**
    
 ```python
 from kekontinuan.module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
-print(is_continuous(lambda x: x**2, 1))
-
-print(check_continuity_interval(lambda x: 1/x if x != 0 else None, -1, 1))
-
-points_to_check = [-1, 0, 1, 2]
-print(check_continuity_at_points(lambda x: 1/x if x != 0 else None, points_to_check))
-
-print(is_continuous_everywhere(lambda x: x**2, (-10, 10)))
 ```
 6. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
 
  ```python
 from limit.module_limit import hitung_limit_kanan_kiri
-fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1'
-titik = 1
-limit_kanan, limit_kiri = hitung_limit_kanan_kiri(fungsi_str, titik)
-
 ```
 
 7. **Jika ingin menjalankan modul mencari trigonometri:**
    
  ```python
-from trigonometri.module_trigonometri import hitung_trigonometri_dengan_kuadran
-hitung_trigonometri_dengan_kuadran(30, 2)
+from trigonometri.module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
 ```
 
 ## Tentang Modul
