@@ -19,56 +19,38 @@ Kalkulus adalah alat yang sangat kuat untuk memahami dan menganalisis segala ses
 
 # CARA PENGGUNAAN 
 
-1. **Install Python:** Pastikan Anda memiliki Python versi 3.x. Anda dapat mengunduh Python dari situs resmi Python.
-2. **Install Project:** Jalankan **pip install CalculusPython8** di terminal.
+1. **Install Project:** Jalankan **pip install Kalkulus8** di terminal.
    
 ```bash
-pip install CalculusPython8
+pip install Kalkulus8
 ```
 
-3. **Jika ingin menjalankan modul mencari grafik:**
+2. **Jika ingin menjalankan modul mencari grafik:**
    
 ```python
 from grafik_fungsi.module_grafik import create_plot
-create_plot((0, 2 * np.pi), np.sin)
 ```
-4. **Jika ingin menjalankan modul mencari domain dan range:**
+3. **Jika ingin menjalankan modul mencari domain dan range:**
    
 ```python
 from domain_range.module_domain_dan_range import analisis_fungsi
-domain, f_range = analisis_fungsi("x**2 + 3*x - 4")
-print(f"Domain: {domain}")
-print(f"Range: {f_range}")
 ```
 
-5. **Jika ingin menjalankan modul mencari kontinu:**
+4. **Jika ingin menjalankan modul mencari kontinu:**
    
 ```python
 from kekontinuan.module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
-print(is_continuous(lambda x: x**2, 1))
-
-print(check_continuity_interval(lambda x: 1/x if x != 0 else None, -1, 1))
-
-points_to_check = [-1, 0, 1, 2]
-print(check_continuity_at_points(lambda x: 1/x if x != 0 else None, points_to_check))
-
-print(is_continuous_everywhere(lambda x: x**2, (-10, 10)))
 ```
-6. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
+5. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
 
  ```python
 from limit.module_limit import hitung_limit_kanan_kiri
-fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1'
-titik = 1
-limit_kanan, limit_kiri = hitung_limit_kanan_kiri(fungsi_str, titik)
-
 ```
 
-7. **Jika ingin menjalankan modul mencari trigonometri:**
+6. **Jika ingin menjalankan modul mencari trigonometri:**
    
  ```python
-from trigonometri.module_trigonometri import hitung_trigonometri_dengan_kuadran
-hitung_trigonometri_dengan_kuadran(30, 2)
+from trigonometri.module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
 ```
 
 ## Tentang Modul
@@ -102,13 +84,13 @@ grafik dari fungsi tersebut
 ### 2. module_domain_dan_range
 Modul ini menganalisis domain dan range dari fungsi untuk mengetahui input dan output yang valid dari fungsi tersebut.
 
-a. `temukan_domain_dan_range(expr)`
+a. `temukan_domain_dan_range(expression)`
 
 Fungsi ini digunakan untuk menemukan domain dan range dari suatu ekspresi matematika.
 
 **Parameter:**
 
-* `expr:` Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
+* `expression:` Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
 
 
 b. `analisis_fungsi(expression)`
