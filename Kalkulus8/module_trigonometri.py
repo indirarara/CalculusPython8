@@ -3,13 +3,13 @@ import math
 def trigonometri(sudut_derajat):
     sudut_radians = math.radians(sudut_derajat)
 
-    sin = math.sin(sudut_radians)
-    cos = math.cos(sudut_radians)
-    tan = math.tan(sudut_radians)
+    sin = round(math.sin(sudut_radians))
+    cos = round(math.cos(sudut_radians))
+    tan = round(math.tan(sudut_radians))
 
-    cot = None if tan == 0 else 1/tan
-    sec = None if cos == 0 else 1/cos
-    csc = None if sin == 0 else 1/sin
+    cot = None if tan == 0 else round(1/tan)
+    sec = None if cos == 0 else round(1/cos)
+    csc = None if sin == 0 else round(1/sin)
 
     return {
         "sudut (derajat)": sudut_derajat,
@@ -55,6 +55,3 @@ def hitung_trigonometri_dengan_kuadran(sudut, kuadran):
         "csc": result['csc']
     }
 
-# contoh penggunaan 
-# result = hitung_trigonometri_dengan_kuadran(30, 2)
-# print(result)
