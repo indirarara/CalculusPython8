@@ -38,9 +38,3 @@ def hitung_limit_kanan_kiri(fungsi_str, titik):
     except Exception as e:
         return f"Terjadi kesalahan: {e}"
 
-# Contoh penggunaan
-# fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1'
-# titik = 2
-
-# hasil = hitung_limit_kanan_kiri(fungsi_str, titik)
-# print(hasil)
