@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Calculus',
-    version='0.1.0',
+    name='Kalkulus8',
+    version='0.1.2',
     description='Paket ini terdiri dari beberapa modul yang berfungsi untuk menganalisis berbagai inputan dalam lingkup kalkulus',
     long_description=open('README.md').read(),
     long_description_content_type="text/markdown",
