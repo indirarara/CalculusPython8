@@ -19,36 +19,35 @@ Kalkulus adalah alat yang sangat kuat untuk memahami dan menganalisis segala ses
 
 # CARA PENGGUNAAN 
 
-1. **Install Python:** Pastikan Anda memiliki Python versi 3.x. Anda dapat mengunduh Python dari situs resmi Python.
-2. **Install Project:** Jalankan **pip install CalculusPython8** di terminal.
+1. **Install Project:** Jalankan **pip install Kalkulus8** di terminal.
    
 ```bash
 pip install Kalkulus8
 ```
 
-3. **Jika ingin menjalankan modul mencari grafik:**
+2. **Jika ingin menjalankan modul mencari grafik:**
    
 ```python
 from grafik_fungsi.module_grafik import create_plot
 ```
-4. **Jika ingin menjalankan modul mencari domain dan range:**
+3. **Jika ingin menjalankan modul mencari domain dan range:**
    
 ```python
 from domain_range.module_domain_dan_range import analisis_fungsi
 ```
 
-5. **Jika ingin menjalankan modul mencari kontinu:**
+4. **Jika ingin menjalankan modul mencari kontinu:**
    
 ```python
 from kekontinuan.module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
 ```
-6. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
+5. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
 
  ```python
 from limit.module_limit import hitung_limit_kanan_kiri
 ```
 
-7. **Jika ingin menjalankan modul mencari trigonometri:**
+6. **Jika ingin menjalankan modul mencari trigonometri:**
    
  ```python
 from trigonometri.module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
