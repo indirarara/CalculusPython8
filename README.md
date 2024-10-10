@@ -30,42 +30,28 @@ pip install CalculusPython8
    
 ```python
 from grafik_fungsi.module_grafik import create_plot
-create_plot((0, 2 * np.pi), np.sin)
 ```
 4. **Jika ingin menjalankan modul mencari domain dan range:**
    
 ```python
 from domain_range.module_domain_dan_range import analisis_fungsi
-domain, f_range = analisis_fungsi("x**2")
 ```
+
 5. **Jika ingin menjalankan modul mencari kontinu:**
    
 ```python
 from kekontinuan.module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
-print(is_continuous(lambda x: x**2, 1))
-
-print(check_continuity_interval(lambda x: 1/x if x != 0 else None, -1, 1))
-
-points_to_check = [-1, 0, 1, 2]
-print(check_continuity_at_points(lambda x: 1/x if x != 0 else None, points_to_check))
-
-print(is_continuous_everywhere(lambda x: x**2, (-10, 10)))
 ```
 6. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
 
  ```python
 from limit.module_limit import hitung_limit_kanan_kiri
-fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1'
-titik = 1
-limit_kanan, limit_kiri = hitung_limit_kanan_kiri(fungsi_str, titik)
-
 ```
 
 7. **Jika ingin menjalankan modul mencari trigonometri:**
    
  ```python
-from trigonometri.module_trigonometri import hitung_trigonometri_dengan_kuadran
-hitung_trigonometri_dengan_kuadran(30, 2)
+from trigonometri.module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
 ```
 
 ## Tentang Modul
@@ -92,16 +78,20 @@ create_plot((0, 2 * np.pi), np.sin)
 
 ## Output:
 
+```python
+grafik dari fungsi tersebut
+```
+
 ### 2. module_domain_dan_range
 Modul ini menganalisis domain dan range dari fungsi untuk mengetahui input dan output yang valid dari fungsi tersebut.
 
-a. `temukan_domain_dan_range(expr)`
+a. `temukan_domain_dan_range(expression)`
 
 Fungsi ini digunakan untuk menemukan domain dan range dari suatu ekspresi matematika.
 
 **Parameter:**
 
-* `expr:` Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
+* `expression:` Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
 
 
 b. `analisis_fungsi(expression)`
@@ -115,10 +105,18 @@ Fungsi ini adalah fungsi yang menerima ekspresi matematika dalam bentuk string d
 ## Contoh Penggunaan:
 
 ```python
-domain, f_range = analisis_fungsi("x**2")
+domain, f_range = analisis_fungsi("x**2 + 3*x - 4")
+print(f"Domain: {domain}")
+print(f"Range: {f_range}")
 ```
 
 ## Output:
+
+```python
+Domain: Reals
+Range: Interval(-25/4, oo)
+```
+
 
 ### 3. module_kekontinuan
 
@@ -144,7 +142,7 @@ Fungsi ini memeriksa kontinuitas suatu fungsi 𝑓(𝑥) dalam interval [𝑠�
 * `start:` Titik awal dari interval di mana fungsi f akan diuji kontinuitasnya.
 * `end:` Titik akhir dari interval di mana fungsi f akan diuji kontinuitasnya.
 * `step (opsional):` Jarak antara titik-titik evaluasi dalam interval. Misalnya, jika start=0, end=1, dan step=0.1, maka titik yang diuji adalah 0, 0.1, 0.2, ... hingga 1. Makin kecil nilai step, makin halus pengecekannya, tetapi lebih memakan waktu.
-* `epsilon (opsional):` Toleransi untuk menghitung limit (seperti pada fungsi is_continuous)
+* `epsilon (opsional):` Toleransi untuk menghitung limit (seperti pada fungsi `is_continuous`)
 
 c. `check_continuity_at_points(f, points, epsilon=1e-7)`
   
@@ -152,7 +150,7 @@ Fungsi ini memeriksa kontinuitas fungsi 𝑓(𝑥) di beberapa titik yang diberi
 
 **Parameter:**
 
-* `f:` Fungsi matematika yang akan diuji (seperti pada fungsi is_continuous).
+* `f:` Fungsi matematika yang akan diuji (seperti pada fungsi `is_continuous`).
 * `points:` Daftar titik-titik di mana kekontinuan fungsi f akan diuji.
 * `epsilon (opsional):` Toleransi untuk menghitung limit di titik-titik yang diberikan.
 
@@ -162,7 +160,7 @@ Fungsi ini memeriksa apakah fungsi 𝑓(𝑥) kontinu di seluruh domain yang dib
 
 **Parameter:**
 
-* `f:` Fungsi matematika yang akan diuji (seperti pada fungsi is_continuous).
+* `f:` Fungsi matematika yang akan diuji (seperti pada fungsi `is_continuous`).
 * `domain:` Tuple yang berisi titik awal dan titik akhir domain di mana fungsi akan diuji kontinuitasnya.
 * `epsilon (opsional):` Toleransi untuk menghitung limit dalam evaluasi kontinu di seluruh domain.
 * `step (opsional):` Jarak antar titik evaluasi dalam domain. Jika step kecil, fungsi akan diuji di banyak titik dan akan memberikan hasil yang lebih akurat.
@@ -178,10 +176,18 @@ print(is_continuous(lambda x: x**2, 1))
 ## Output:
 
 ```python
+True
+```
+
+```python
 # Cek kekontinuan pada interval [-1, 1] untuk fungsi 1/x
 print(check_continuity_interval(lambda x: 1/x if x != 0 else None, -1, 1))
 ```
 ## Output:
+
+```python
+[]
+```
 
 ```python
 # Cek kekontinuan di beberapa titik
@@ -191,14 +197,22 @@ print(check_continuity_at_points(lambda x: 1/x if x != 0 else None, points_to_ch
 ## Output:
 
 ```python
+[(-1, True), (0, False), (1, True), (2, True)]
+```
+
+```python
 # Cek kekontinuan di seluruh domain [-10, 10]
 print(is_continuous_everywhere(lambda x: x**2, (-10, 10)))  # True
 ```
 
 ## Output:
 
+```python
+True
+```
+
 ### 4. module_limit
-Modul ini menghitung limit fungsi saat mendekati titik tertentu dari sisi kiri dan kanan.
+Modul ini menghitung limit fungsi piecewise saat mendekati titik tertentu dari sisi kiri dan kanan.
 
 a. `hitung_limit_kanan_kiri(fungsi_str, titik)`
 
@@ -206,17 +220,25 @@ Fungsi ini digunakan untuk menghitung batas (limit) kanan dan kiri dari suatu fu
 
 **Parameter:**
 
-* `fungsi_str:` Ini adalah sebuah string yang menggambarkan fungsi piecewise dalam format tertentu. Fungsi ini dibagi oleh koma (,) antara bagian-bagian fungsi yang berbeda.Contoh "x**2 jika x > 0, x**3 jika x <= 0".
+* `fungsi_str:` Ini adalah sebuah string yang menggambarkan fungsi piecewise dalam format tertentu. Fungsi ini dibagi oleh koma (,) antara bagian-bagian fungsi yang berbeda.Contoh "x** 2 jika x > 0, x ** 3 jika x <= 0".
 * `titik:` Titik di mana limit kanan dan kiri akan dihitung. Titik ini adalah nilai dari 𝑥 yang digunakan dalam perhitungan limit fungsi piecewise.
 
 ## Contoh Penggunaan:
 
 ```python
 fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1'
-titik = 1
-limit_kanan, limit_kiri = hitung_limit_kanan_kiri(fungsi_str, titik)
+titik = 2
+
+hasil = hitung_limit_kanan_kiri(fungsi_str, titik)
+print(hasil)
 ```
 ## Output:
+
+```python
+Fungsi piecewise yang terbentuk: Piecewise(((x - 2)/(x + 3), x < 1), (x**2 + 3*x, True))
+Limit kanan: 10
+Limit kiri: 10
+```
 
 ### 5. module_trigonometri
 Modul ini menghitung berbagai nilai fungsi trigonometri seperti sinus, cosinus, dan tangen.
@@ -252,3 +274,7 @@ Fungsi ini menghitung nilai trigonometri untuk suatu sudut yang diberikan dengan
 hitung_trigonometri_dengan_kuadran(30, 2)
 ```
 ## Output:
+
+```python
+{'sudut asli': 30, 'sudut disesuaikan': 150, 'sin': 0.49, 'cos': -0.86, 'tan': -0.57, 'cot': -1.73, 'sec': -1.15, 'csc': 2.00}
+```
