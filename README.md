@@ -56,7 +56,8 @@ print(is_continuous_everywhere(lambda x: x**2, (-10, 10)))
 
  ```python
 from limit.module_limit import hitung_limit_kanan_kiri
-limit_kanan, limit_kiri = hitung_limit_kanan_kiri((x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1, 1)
+fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1'
+titik = 1
 ```
 
 7. **Jika ingin menjalankan modul mencari trigonometri:**
