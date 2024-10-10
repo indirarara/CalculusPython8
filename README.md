@@ -270,10 +270,11 @@ Fungsi ini menghitung nilai trigonometri untuk suatu sudut yang diberikan dengan
 ## Contoh Penggunaan:
 
 ```python
-hitung_trigonometri_dengan_kuadran(30, 2)
+result = hitung_trigonometri_dengan_kuadran(45, 2) 
+print(result)
 ```
 ## Output:
 
 ```python
-{'sudut asli': 30, 'sudut disesuaikan': 150, 'sin': 0.49, 'cos': -0.86, 'tan': -0.57, 'cot': -1.73, 'sec': -1.15, 'csc': 2.00}
+{'sudut asli': 45, 'sudut disesuaikan': 135, 'sin': 1, 'cos': -1, 'tan': -1, 'cot': -1, 'sec': -1, 'csc': 1}
 ```
