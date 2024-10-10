@@ -159,7 +159,7 @@ Fungsi ini memeriksa kontinuitas suatu fungsi 𝑓(𝑥) dalam interval [𝑠�
 * `start:` Titik awal dari interval di mana fungsi f akan diuji kontinuitasnya.
 * `end:` Titik akhir dari interval di mana fungsi f akan diuji kontinuitasnya.
 * `step (opsional):` Jarak antara titik-titik evaluasi dalam interval. Misalnya, jika start=0, end=1, dan step=0.1, maka titik yang diuji adalah 0, 0.1, 0.2, ... hingga 1. Makin kecil nilai step, makin halus pengecekannya, tetapi lebih memakan waktu.
-* `epsilon (opsional):` Toleransi untuk menghitung limit (seperti pada fungsi is_continuous)
+* `epsilon (opsional):` Toleransi untuk menghitung limit (seperti pada fungsi `is_continuous`)
 
 c. `check_continuity_at_points(f, points, epsilon=1e-7)`
   
@@ -167,7 +167,7 @@ Fungsi ini memeriksa kontinuitas fungsi 𝑓(𝑥) di beberapa titik yang diberi
 
 **Parameter:**
 
-* `f:` Fungsi matematika yang akan diuji (seperti pada fungsi is_continuous).
+* `f:` Fungsi matematika yang akan diuji (seperti pada fungsi `is_continuous`).
 * `points:` Daftar titik-titik di mana kekontinuan fungsi f akan diuji.
 * `epsilon (opsional):` Toleransi untuk menghitung limit di titik-titik yang diberikan.
 
@@ -177,7 +177,7 @@ Fungsi ini memeriksa apakah fungsi 𝑓(𝑥) kontinu di seluruh domain yang dib
 
 **Parameter:**
 
-* `f:` Fungsi matematika yang akan diuji (seperti pada fungsi is_continuous).
+* `f:` Fungsi matematika yang akan diuji (seperti pada fungsi `is_continuous`).
 * `domain:` Tuple yang berisi titik awal dan titik akhir domain di mana fungsi akan diuji kontinuitasnya.
 * `epsilon (opsional):` Toleransi untuk menghitung limit dalam evaluasi kontinu di seluruh domain.
 * `step (opsional):` Jarak antar titik evaluasi dalam domain. Jika step kecil, fungsi akan diuji di banyak titik dan akan memberikan hasil yang lebih akurat.
