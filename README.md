@@ -28,29 +28,29 @@ pip install Kalkulus8
 2. **Jika ingin menjalankan modul mencari grafik:**
    
 ```python
-from grafik_fungsi.module_grafik import create_plot
+from .module_grafik import create_plot
 ```
 3. **Jika ingin menjalankan modul mencari domain dan range:**
    
 ```python
-from domain_range.module_domain_dan_range import analisis_fungsi
+from .module_domain_dan_range import analisis_fungsi
 ```
 
 4. **Jika ingin menjalankan modul mencari kontinu:**
    
 ```python
-from kekontinuan.module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
+from .module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
 ```
 5. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
 
  ```python
-from limit.module_limit import hitung_limit_kanan_kiri
+from .module_limit import hitung_limit_kanan_kiri
 ```
 
 6. **Jika ingin menjalankan modul mencari trigonometri:**
    
  ```python
-from trigonometri.module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
+from .module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
 ```
 
 ## Tentang Modul
