@@ -85,13 +85,13 @@ grafik dari fungsi tersebut
 ### 2. module_domain_dan_range
 Modul ini menganalisis domain dan range dari fungsi untuk mengetahui input dan output yang valid dari fungsi tersebut.
 
-a. `temukan_domain_dan_range(expr)`
+a. `temukan_domain_dan_range(expression)`
 
 Fungsi ini digunakan untuk menemukan domain dan range dari suatu ekspresi matematika.
 
 **Parameter:**
 
-* `expr:` Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
+* `expression:` Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
 
 
 b. `analisis_fungsi(expression)`
