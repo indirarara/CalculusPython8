@@ -35,3 +35,4 @@ def is_continuous_everywhere(f, domain, epsilon=1e-7, step=0.1):
             return False
         x += step
     return True
+
