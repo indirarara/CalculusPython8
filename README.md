@@ -23,7 +23,7 @@ Kalkulus adalah alat yang sangat kuat untuk memahami dan menganalisis segala ses
 2. **Install Project:** Jalankan **pip install CalculusPython8** di terminal.
    
 ```bash
-pip install CalculusPython8
+pip install Kalkulus8
 ```
 
 3. **Jika ingin menjalankan modul mencari grafik:**
