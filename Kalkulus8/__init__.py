@@ -19,7 +19,7 @@ __all__ = [
     "is_continuous", 
     "check_continuity_interval", 
     "check_continuity_at_points", 
-    "is_continuous_everywhere"
+    "is_continuous_everywhere",
     "trigonometri", 
     "penyesualian_sudut_dengan_kuadran", 
     "hitung_trigonometri_dengan_kuadran",
