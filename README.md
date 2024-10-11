@@ -98,7 +98,7 @@ print(hasil)
 ## Output:
 
 ```python
-All real numbers, Range: {7}
+Semua bilangan real, Range: {7}
 ```
 
 
