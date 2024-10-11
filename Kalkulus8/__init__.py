@@ -15,7 +15,7 @@ from .module_domain_dan_range import (
 )
 
 __all__ = [
-    "creat_plot",
+    "create_plot",
     "is_continuous", 
     "check_continuity_interval", 
     "check_continuity_at_points", 
