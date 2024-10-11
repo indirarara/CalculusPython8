@@ -110,7 +110,7 @@ Fungsi ini adalah fungsi yang menerima ekspresi matematika dalam bentuk string d
 
 **Parameter:**
 
-* `expression:` Ini adalah ekspresi matematika dalam format string yang akan dianalisis. Sebagai contoh, jika ingin menganalisis fungsi x ** 2 - 4, maka inputnya bisa berupa string 'x ** 2 - 4'. Fungsi ini kemudian mengubah string tersebut menjadi ekspresi SymPy untuk analisis lebih lanjut.
+* `expression:`  Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
 
 ## Contoh Penggunaan:
 
