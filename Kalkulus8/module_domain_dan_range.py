@@ -37,7 +37,7 @@ def analisis_fungsi(expression):
         domain, f_range = temukan_domain_dan_range(expr)
 
         if domain == sp.S.Reals:
-            return f"Domain: All real numbers, Range: {f_range}"
+            return f"Domain: Semua bilangan real, Range: {f_range}"
         else:
             return f"Domain: {domain}, Range: {f_range}"
 
