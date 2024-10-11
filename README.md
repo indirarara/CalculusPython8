@@ -25,32 +25,10 @@ Kalkulus adalah alat yang sangat kuat untuk memahami dan menganalisis segala ses
 pip install Kalkulus8
 ```
 
-2. **Jika ingin menjalankan modul mencari grafik:**
+2. **Jika ingin menjalankan modul yang ada di Kalkulus8:**
    
 ```python
-from .module_grafik import create_plot
-```
-3. **Jika ingin menjalankan modul mencari domain dan range:**
-   
-```python
-from .module_domain_dan_range import analisis_fungsi
-```
-
-4. **Jika ingin menjalankan modul mencari kontinu:**
-   
-```python
-from .module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
-```
-5. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
-
- ```python
-from .module_limit import hitung_limit_kanan_kiri
-```
-
-6. **Jika ingin menjalankan modul mencari trigonometri:**
-   
- ```python
-from .module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
+from Kalkulus8 import *
 ```
 
 ## Tentang Modul
@@ -84,7 +62,16 @@ grafik dari fungsi tersebut
 ### 2. module_domain_dan_range
 Modul ini menganalisis domain dan range dari fungsi untuk mengetahui input dan output yang valid dari fungsi tersebut.
 
-a. `temukan_domain_dan_range(expression)`
+a. `validasi_input(expression):`
+
+Fungsi ini digunakan untuk memvalidasi input atau ekspresi matematika yang diberikan.
+
+**Parameter:**
+
+* `expression:` Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
+
+
+b. `temukan_domain_dan_range(expression)`
 
 Fungsi ini digunakan untuk menemukan domain dan range dari suatu ekspresi matematika.
 
@@ -93,7 +80,7 @@ Fungsi ini digunakan untuk menemukan domain dan range dari suatu ekspresi matema
 * `expression:` Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
 
 
-b. `analisis_fungsi(expression)`
+c. `analisis_fungsi(expression)`
 
 Fungsi ini adalah fungsi yang menerima ekspresi matematika dalam bentuk string dan kemudian memanggil fungsi `temukan_domain_dan_range()` untuk menganalisis domain dan range dari ekspresi tersebut.
 
@@ -104,16 +91,14 @@ Fungsi ini adalah fungsi yang menerima ekspresi matematika dalam bentuk string d
 ## Contoh Penggunaan:
 
 ```python
-domain, f_range = analisis_fungsi("x**2 + 3*x - 4")
-print(f"Domain: {domain}")
-print(f"Range: {f_range}")
+hasil = analisis_fungsi("sqrt(49)")  
+print(hasil)
 ```
 
 ## Output:
 
 ```python
-Domain: Reals
-Range: Interval(-25/4, oo)
+All real numbers, Range: {7}
 ```
 
 
@@ -225,18 +210,26 @@ Fungsi ini digunakan untuk menghitung batas (limit) kanan dan kiri dari suatu fu
 ## Contoh Penggunaan:
 
 ```python
-fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1'
-titik = 2
+try:
+    fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1' 
+except Exception as e:
+    fungsi_str = "tidak valid"
+
+try:
+    titik = 1 
+except NameError:
+    titik = "tidak valid"
 
 hasil = hitung_limit_kanan_kiri(fungsi_str, titik)
 print(hasil)
+
 ```
 ## Output:
 
 ```python
 Fungsi piecewise yang terbentuk: Piecewise(((x - 2)/(x + 3), x < 1), (x**2 + 3*x, True))
-Limit kanan: 10
-Limit kiri: 10
+Limit kanan: 4
+Limit kiri: 4
 ```
 
 ### 5. module_trigonometri
