@@ -51,8 +51,8 @@ hasil = hitung_limit_kanan_kiri("x**2 jika x < 2, 3*x jika x >= 2", 2)
 print(hasil)
 
 # Modul Trigonometri
-Hasil = hitung_trigonometri_dengan_kuadran(45, 2) 
-print(Hasil)
+hasil = hitung_trigonometri_dengan_kuadran(45, 2) 
+print(hasil)
 ```
 
 ## Tentang Modul
