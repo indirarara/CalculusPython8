@@ -51,8 +51,8 @@ hasil = hitung_limit_kanan_kiri("x**2 jika x < 2, 3*x jika x >= 2", 2)
 print(hasil)
 
 # Modul Trigonometri
-result = hitung_trigonometri_dengan_kuadran(45, 2) 
-print(result)
+Hasil = hitung_trigonometri_dengan_kuadran(45, 2) 
+print(Hasil)
 ```
 
 ## Tentang Modul
@@ -276,8 +276,8 @@ Fungsi ini menghitung nilai trigonometri untuk suatu sudut yang diberikan dengan
 ## Contoh Penggunaan:
 
 ```python
-result = hitung_trigonometri_dengan_kuadran(45, 2) 
-print(result)
+Hasil = hitung_trigonometri_dengan_kuadran(45, 2) 
+print(Hasil)
 ```
 ## Output:
 
