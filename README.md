@@ -27,7 +27,7 @@ pip install Kalkulus8
 
 2. **Jika ingin menjalankan modul yang ada di Kalkulus8:**
    
-```python
+```bash
 from Kalkulus8 import *
 ```
 
