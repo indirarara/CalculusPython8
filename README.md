@@ -19,39 +19,38 @@ Kalkulus adalah alat yang sangat kuat untuk memahami dan menganalisis segala ses
 
 # CARA PENGGUNAAN 
 
-1. **Install Python:** Pastikan Anda memiliki Python versi 3.x. Anda dapat mengunduh Python dari situs resmi Python.
-2. **Install Project:** Jalankan **pip install CalculusPython8** di terminal.
+1. **Install Project:** Jalankan **pip install Kalkulus8** di terminal.
    
 ```bash
-pip install CalculusPython8
+pip install Kalkulus8
 ```
 
-3. **Jika ingin menjalankan modul mencari grafik:**
+2. **Jika ingin menjalankan modul mencari grafik:**
    
 ```python
-from grafik_fungsi.module_grafik import create_plot
+from .module_grafik import create_plot
 ```
-4. **Jika ingin menjalankan modul mencari domain dan range:**
+3. **Jika ingin menjalankan modul mencari domain dan range:**
    
 ```python
-from domain_range.module_domain_dan_range import analisis_fungsi
+from .module_domain_dan_range import analisis_fungsi
 ```
 
-5. **Jika ingin menjalankan modul mencari kontinu:**
+4. **Jika ingin menjalankan modul mencari kontinu:**
    
 ```python
-from kekontinuan.module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
+from .module_kekontinuan import is_continuous, check_continuity_interval, check_continuity_at_points, is_continuous_everywhere
 ```
-6. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
+5. **Jika ingin menjalankan modul mencari limit kanan dan kiri:**
 
  ```python
-from limit.module_limit import hitung_limit_kanan_kiri
+from .module_limit import hitung_limit_kanan_kiri
 ```
 
-7. **Jika ingin menjalankan modul mencari trigonometri:**
+6. **Jika ingin menjalankan modul mencari trigonometri:**
    
  ```python
-from trigonometri.module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
+from .module_trigonometri import trigonometri, penyesualian_sudut_dengan_kuadran, hitung_trigonometri_dengan_kuadran
 ```
 
 ## Tentang Modul
@@ -271,10 +270,11 @@ Fungsi ini menghitung nilai trigonometri untuk suatu sudut yang diberikan dengan
 ## Contoh Penggunaan:
 
 ```python
-hitung_trigonometri_dengan_kuadran(30, 2)
+result = hitung_trigonometri_dengan_kuadran(45, 2) 
+print(result)
 ```
 ## Output:
 
 ```python
-{'sudut asli': 30, 'sudut disesuaikan': 150, 'sin': 0.49, 'cos': -0.86, 'tan': -0.57, 'cot': -1.73, 'sec': -1.15, 'csc': 2.00}
+{'sudut asli': 45, 'sudut disesuaikan': 135, 'sin': 1, 'cos': -1, 'tan': -1, 'cot': -1, 'sec': -1, 'csc': 1}
 ```
