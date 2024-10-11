@@ -210,19 +210,8 @@ Fungsi ini digunakan untuk menghitung batas (limit) kanan dan kiri dari suatu fu
 ## Contoh Penggunaan:
 
 ```python
-try:
-    fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1' 
-except Exception as e:
-    fungsi_str = "tidak valid"
-
-try:
-    titik = 1 
-except NameError:
-    titik = "tidak valid"
-
-hasil = hitung_limit_kanan_kiri(fungsi_str, titik)
+hasil = hitung_limit_kanan_kiri("x**2 jika x < 2, 3*x jika x >= 2", 2)
 print(hasil)
-
 ```
 ## Output:
 
