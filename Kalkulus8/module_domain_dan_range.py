@@ -21,3 +21,21 @@ def analisis_fungsi(expression):
 
     except Exception as e:
         return f"Terjadi kesalahan: {e}"
+
+"""
+Menambahkan input dari pengguna
+
+contoh pemakaian tanpa inputan:
+
+domain, f_range = analisis_fungsi("x**2")
+print(f"Domain: {domain}")
+print(f"Range: {f_range}")
+
+contoh pemakaian menggunakan inputan:
+
+expression = input("Masukkan fungsi yang ingin dianalisis (misal: 1/(x-2), sqrt(x), x**2 + 1, 1/(x**2 - 4) : ")
+
+result = analisis_fungsi(expression)
+print(f"Domain dan rangenya adalah: {result}")
+
+"""
