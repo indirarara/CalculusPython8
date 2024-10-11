@@ -1,15 +1,31 @@
 import sympy as sp
+import re
 
 def hitung_limit_kanan_kiri(fungsi_str, titik):
     try:
-        x = sp.Symbol('x')
-        fungsi_kondisi_list = fungsi_str.split(',')
+        try:
+            x = sp.Symbol('x')
+            fungsi_kondisi_list = fungsi_str.split(',')
+            for fungsi_kondisi in fungsi_kondisi_list:
+                if "jika" in fungsi_kondisi:
+                    fungsi_part, kondisi_part = fungsi_kondisi.split("jika")
+                    fungsi = sp.sympify(fungsi_part.strip())
+                    kondisi = sp.sympify(kondisi_part.strip())
+                else:
+                    fungsi = sp.sympify(fungsi_kondisi.strip())
+                    kondisi = True
+        except (SyntaxError, ValueError) as e:
+            return "Fungsi yang dimasukkan tidak valid."
+
+        if not isinstance(titik, (int, float)):
+            return "Titik yang dimasukkan tidak valid."
+
+        if re.search(r'[a-zA-Z]', str(titik)):
+            return "Titik yang dimasukkan tidak valid."
 
         kondisi_pieces = []
         for fungsi_kondisi in fungsi_kondisi_list:
             try:
-                if not isinstance(titik, (int, float)):
-                    return "Titik yang dimasukkan bukan bilangan."
                 if "jika" in fungsi_kondisi:
                     fungsi_part, kondisi_part = fungsi_kondisi.split("jika")
                     fungsi = sp.sympify(fungsi_part.strip())
@@ -19,16 +35,19 @@ def hitung_limit_kanan_kiri(fungsi_str, titik):
                     kondisi = True
                 kondisi_pieces.append((fungsi, kondisi))
             except (SyntaxError, ValueError) as e:
-                return f"Terjadi kesalahan sintaksis atau tipe data dalam fungsi: {e}"
+                raise ValueError(f"Terjadi kesalahan sintaksis atau tipe data dalam fungsi: {e}")
             except NameError as e:
-                return f"Variabel tidak terdefinisi: {e}"
+                raise ValueError(f"Variabel tidak terdefinisi: {e}")
             except ZeroDivisionError:
-                return "Fungsi tidak terdefinisi pada titik tersebut."
+                raise ValueError("Fungsi tidak terdefinisi pada titik tersebut.")
             except Exception as e:
-                return f"Terjadi kesalahan tak terduga: {e}"
+                raise ValueError(f"Terjadi kesalahan tak terduga: {e}")
+
+        if not kondisi_pieces:
+            raise ValueError("Fungsi piecewise tidak dapat dibentuk.")
 
         fungsi_piecewise = sp.Piecewise(*kondisi_pieces)
-        print(f"Fungsi piecewise yang terbentuk: {fungsi_piecewise}")  # Untuk debugging
+        print(f"Fungsi piecewise yang terbentuk: {fungsi_piecewise}")  
 
         limit_kanan = sp.limit(fungsi_piecewise, x, titik, dir='+')
         limit_kiri = sp.limit(fungsi_piecewise, x, titik, dir='-')
@@ -38,9 +57,3 @@ def hitung_limit_kanan_kiri(fungsi_str, titik):
     except Exception as e:
         return f"Terjadi kesalahan: {e}"
 
-# Contoh penggunaan
-# fungsi_str = '(x-2)/(x+3) jika x<1, x**2 + 3*x jika x>=1'
-# titik = 2
-
-# hasil = hitung_limit_kanan_kiri(fungsi_str, titik)
-# print(hasil)
