@@ -31,6 +31,30 @@ pip install Kalkulus8
 from Kalkulus8 import *
 ```
 
+3. **Panggil fungsi yang ingin Anda gunakan:**
+
+   ***Contoh Pemanggilan:***
+   
+```python
+# Modul Grafik
+create_plot((0, 2 * np.pi), np.sin)
+
+# Modul Domain dan Range
+hasil = analisis_fungsi("sqrt(49)")  
+print(hasil)
+
+# Modul Kekontinuan
+print(is_continuous(lambda x: x**2, 1))
+
+# Modul Limit
+hasil = hitung_limit_kanan_kiri("x**2 jika x < 2, 3*x jika x >= 2", 2)
+print(hasil)
+
+# Modul Trigonometri
+result = hitung_trigonometri_dengan_kuadran(45, 2) 
+print(result)
+```
+
 ## Tentang Modul
 Paket Kalkulus terdiri dari beberapa modul:
 
