@@ -175,48 +175,55 @@ Fungsi ini memeriksa apakah fungsi 𝑓(𝑥) kontinu di seluruh domain yang dib
 
 
 ## Contoh Penggunaan:
+a. `is_continuous`
 
 ```python
-# Cek kekontinuan di satu titik
-print(is_continuous(lambda x: x**2, 1))
+hasil = is_continuous(lambda x: x**2, 1)
+print(f"Kontinuitas di x=1: {hasil}")
 ```
 
 ## Output:
 
 ```python
-True
+Kontinuitas di x=1: True
 ```
 
-```python
-# Cek kekontinuan pada interval [-1, 1] untuk fungsi 1/x
-print(check_continuity_interval(lambda x: 1/x if x != 0 else None, -1, 1))
-```
-## Output:
+b. `check_continuity_interval`
 
 ```python
-[]
-```
-
-```python
-# Cek kekontinuan di beberapa titik
-points_to_check = [-1, 0, 1, 2]
-print(check_continuity_at_points(lambda x: 1/x if x != 0 else None, points_to_check))
+hasil = check_continuity_interval(lambda x: 1/x if x != 0 else None, -2, 2)
+print(f"Kontinuitas pada interval [-2, 2]: {hasil}")
 ```
 ## Output:
 
 ```python
-[(-1, True), (0, False), (1, True), (2, True)]
+Kontinuitas pada interval [-2, 2]: []
 ```
 
+c. `check_continuity_at_points`
+
 ```python
-# Cek kekontinuan di seluruh domain [-10, 10]
-print(is_continuous_everywhere(lambda x: x**2, (-10, 10)))  # True
+titik = [-2, -1, 0, 1, 2]
+hasil = check_continuity_at_points(lambda x: 1/x if x != 0 else None, titik)
+print(f"Kontinuitas di beberapa titik: {hasil}")
+```
+## Output:
+
+```python
+Kontinuitas di beberapa titik: [(-2, True), (-1, True), (0, False), (1, True), (2, True)]
+```
+
+d. `is_continuous_everywhere`
+
+```python
+hasil = is_continuous_everywhere(lambda x: x**2, (-10, 10))
+print(f"Kontinuitas di seluruh domain [-10, 10]: {hasil}")
 ```
 
 ## Output:
 
 ```python
-True
+Kontinuitas di seluruh domain [-10, 10]: True
 ```
 
 ### 4. module_limit
