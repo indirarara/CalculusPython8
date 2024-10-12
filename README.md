@@ -37,6 +37,7 @@ from Kalkulus8 import *
    
 ```python
 # Modul Grafik
+import numpy as np
 create_plot((0, 2 * np.pi), np.sin)
 
 # Modul Domain dan Range
@@ -85,6 +86,7 @@ Fungsi ini digunakan untuk membuat grafik dari suatu fungsi matematis dalam rent
 ## Contoh Penggunaan:
 
 ```python
+import numpy as np
 create_plot((0, 2 * np.pi), np.sin)
 ```
 
