@@ -17,6 +17,6 @@ __all__ = [
     "hitung_limit_kanan_kiri",
     "validasi_input",
     "temukan_domain_dan_range", 
-    "analisis_fungsi"
+    "analisis_fungsi",
     "numpy"
 ]
