@@ -1,40 +1,35 @@
 import sympy as sp
+import re
 
 def hitung_limit_kanan_kiri(fungsi_str, titik):
-    try:
-        x = sp.Symbol('x')
-        fungsi_kondisi_list = fungsi_str.split(',')
+    if not isinstance(titik, (int, float)):
+        return "Titik harus berupa angka (int atau float)."
 
-        kondisi_pieces = []
-        for fungsi_kondisi in fungsi_kondisi_list:
-            try:
-                if not isinstance(titik, (int, float)):
-                    return "Titik yang dimasukkan bukan bilangan."
-                if "jika" in fungsi_kondisi:
-                    fungsi_part, kondisi_part = fungsi_kondisi.split("jika")
-                    fungsi = sp.sympify(fungsi_part.strip())
-                    kondisi = sp.sympify(kondisi_part.strip())
-                else:
-                    fungsi = sp.sympify(fungsi_kondisi.strip())
-                    kondisi = True
-                kondisi_pieces.append((fungsi, kondisi))
-            except (SyntaxError, ValueError) as e:
-                return f"Terjadi kesalahan sintaksis atau tipe data dalam fungsi: {e}"
-            except NameError as e:
-                return f"Variabel tidak terdefinisi: {e}"
-            except ZeroDivisionError:
-                return "Fungsi tidak terdefinisi pada titik tersebut."
-            except Exception as e:
-                return f"Terjadi kesalahan tak terduga: {e}"
+    x = sp.Symbol('x')
 
-        fungsi_piecewise = sp.Piecewise(*kondisi_pieces)
-        print(f"Fungsi piecewise yang terbentuk: {fungsi_piecewise}")  # Untuk debugging
+    if not re.match(r'^[\w\s\*\+\-/\^<>=,jika]*$', fungsi_str):
+        return "Fungsi mengandung karakter tidak valid."
 
-        limit_kanan = sp.limit(fungsi_piecewise, x, titik, dir='+')
-        limit_kiri = sp.limit(fungsi_piecewise, x, titik, dir='-')
+    fungsi_kondisi_list = fungsi_str.split(',')
+    kondisi_pieces = []
 
-        return f"Limit kanan: {limit_kanan}\nLimit kiri: {limit_kiri}"
+    for fungsi_kondisi in fungsi_kondisi_list:
+        fungsi_kondisi = fungsi_kondisi.strip()
+        
+        if "jika" in fungsi_kondisi:
+            fungsi_part, kondisi_part = fungsi_kondisi.split("jika")
+            fungsi = sp.sympify(fungsi_part.strip())
+            kondisi = sp.sympify(kondisi_part.strip())
+        else:
+            fungsi = sp.sympify(fungsi_kondisi)
+            kondisi = True
 
-    except Exception as e:
-        return f"Terjadi kesalahan: {e}"
+        kondisi_pieces.append((fungsi, kondisi))
+
+    fungsi_piecewise = sp.Piecewise(*kondisi_pieces)
+
+    limit_kanan = sp.limit(fungsi_piecewise, x, titik, dir='+')
+    limit_kiri = sp.limit(fungsi_piecewise, x, titik, dir='-')
+
+    return f"Limit kanan: {limit_kanan}\nLimit kiri: {limit_kiri}"
 
