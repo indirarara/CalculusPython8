@@ -44,7 +44,18 @@ hasil = analisis_fungsi("sqrt(49)")
 print(hasil)
 
 # Modul Kekontinuan
-print(is_continuous(lambda x: x**2, 1))
+hasil = is_continuous(lambda x: x**2, 1)
+print(f"Kontinuitas di x=1: {hasil}")
+
+hasil = check_continuity_interval(lambda x: 1/x if x != 0 else None, -2, 2)
+print(f"Kontinuitas pada interval [-2, 2]: {hasil}")
+
+titik = [-2, -1, 0, 1, 2]
+hasil = check_continuity_at_points(lambda x: 1/x if x != 0 else None, titik)
+print(f"Kontinuitas di beberapa titik: {hasil}")
+
+hasil = is_continuous_everywhere(lambda x: x**2, (-10, 10))
+print(f"Kontinuitas di seluruh domain [-10, 10]: {hasil}")
 
 # Modul Limit
 hasil = hitung_limit_kanan_kiri("x**2 jika x < 2, 3*x jika x >= 2", 2)
