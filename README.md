@@ -216,9 +216,8 @@ print(hasil)
 ## Output:
 
 ```python
-Fungsi piecewise yang terbentuk: Piecewise(((x - 2)/(x + 3), x < 1), (x**2 + 3*x, True))
-Limit kanan: 4
-Limit kiri: 4
+Limit kanan: 6
+Limit kiri: 6
 ```
 
 ### 5. module_trigonometri
