@@ -31,6 +31,30 @@ pip install Kalkulus8
 from Kalkulus8 import *
 ```
 
+3. **Panggil fungsi yang ingin Anda gunakan:**
+
+   ***Contoh Pemanggilan:***
+   
+```python
+# Modul Grafik
+create_plot((0, 2 * np.pi), np.sin)
+
+# Modul Domain dan Range
+hasil = analisis_fungsi("sqrt(49)")  
+print(hasil)
+
+# Modul Kekontinuan
+print(is_continuous(lambda x: x**2, 1))
+
+# Modul Limit
+hasil = hitung_limit_kanan_kiri("x**2 jika x < 2, 3*x jika x >= 2", 2)
+print(hasil)
+
+# Modul Trigonometri
+hasil = hitung_trigonometri_dengan_kuadran(45, 2) 
+print(hasil)
+```
+
 ## Tentang Modul
 Paket Kalkulus terdiri dari beberapa modul:
 
@@ -86,7 +110,7 @@ Fungsi ini adalah fungsi yang menerima ekspresi matematika dalam bentuk string d
 
 **Parameter:**
 
-* `expression:` Ini adalah ekspresi matematika dalam format string yang akan dianalisis. Sebagai contoh, jika ingin menganalisis fungsi x ** 2 - 4, maka inputnya bisa berupa string 'x ** 2 - 4'. Fungsi ini kemudian mengubah string tersebut menjadi ekspresi SymPy untuk analisis lebih lanjut.
+* `expression:`  Parameter ini berisi ekspresi matematika yang akan dianalisis. Ini bisa berupa fungsi matematika yang ingin dicari domain dan rangenya. Misalnya, ekspresi seperti x ** 2 + 2 * x + 1, 1/(x-1), atau sqrt (x). Ekspresi ini diwakili dalam bentuk objek SymPy (seperti x ** 2, sin (x), dll).
 
 ## Contoh Penggunaan:
 
@@ -251,8 +275,8 @@ Fungsi ini menghitung nilai trigonometri untuk suatu sudut yang diberikan dengan
 ## Contoh Penggunaan:
 
 ```python
-result = hitung_trigonometri_dengan_kuadran(45, 2) 
-print(result)
+Hasil = hitung_trigonometri_dengan_kuadran(45, 2) 
+print(Hasil)
 ```
 ## Output:
 
