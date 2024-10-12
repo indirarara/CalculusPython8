@@ -43,28 +43,3 @@ def is_continuous_everywhere(f, domain, epsilon=1e-7, step=0.1):
             return False
         x += step
     return True
-
-# Cek kekontinuan di satu titik
-# Menggunakan fungsi lambda sederhana untuk memeriksa kekontinuan pada x=1 untuk fungsi f(x) = x^2
-# Output: True jika kontinu, False jika tidak
-result = is_continuous(lambda x: x**2, 1)
-print(f"Kontinuitas di x=1: {result}")  # True/False
-
-# Cek kekontinuan pada interval [-1, 1] untuk fungsi 1/x
-# Fungsi ini mengecek apakah ada diskontinuitas dalam interval [-1, 1] untuk f(x) = 1/x
-# Output: Daftar titik di mana f(x) tidak kontinu
-result_interval = check_continuity_interval(lambda x: 1/x if x != 0 else None, -2, 2)
-print(f"Kontinuitas pada interval [-2, 2]: {result_interval}")
-
-# Cek kekontinuan di beberapa titik
-# Menggunakan lambda function f(x) = 1/x dan mengecek kekontinuan pada titik [-2, -1, 0, 1, 2]
-# Output: Daftar tuple dengan setiap titik dan status kekontinuan (True/False)
-points_to_check = [-2, -1, 0, 1, 2]
-result_multiple_points = check_continuity_at_points(lambda x: 1/x if x != 0 else None, points_to_check)
-print(f"Kontinuitas di beberapa titik: {result_multiple_points}")
-
-# Cek kekontinuan di seluruh domain [-10, 10]
-# Mengecek apakah fungsi f(x) = x^2 kontinu di seluruh interval [-10, 10]
-# Output: True jika kontinu di seluruh interval, False jika ada diskontinuitas
-result_continuity_over_interval = is_continuous_everywhere(lambda x: x**2, (-10, 10))
-print(f"Kontinuitas di seluruh domain [-10, 10]: {result_continuity_over_interval}") #True or False
