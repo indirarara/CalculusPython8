@@ -8,9 +8,10 @@ def is_continuous(f, x, epsilon=1e-7):
         return abs(limit_left - limit_right) < epsilon and abs(limit_left - f_value) < epsilon
 
     except ZeroDivisionError:
+        print(f"Fungsi tidak terdefinisi di x={x} karena pembagian dengan nol.")
         return False
     except Exception as e:
-        print(f"Error: {e}")
+        print(f"Terjadi kesalahan: {e}")
         return False
 
 def check_continuity_interval(f, start, end, step=0.1, epsilon=1e-7):
@@ -30,8 +31,7 @@ def check_continuity_at_points(f, points, epsilon=1e-7):
             results.append((x, is_cont))
         except Exception as e:
             print(f"Kesalahan saat mengecek titik {x}: {e}")
-            results.append((x, False))
-    
+            results.append((x, False))  
     return results
 
 def is_continuous_everywhere(f, domain, epsilon=1e-7, step=0.1):
@@ -65,5 +65,5 @@ print(f"Kontinuitas di beberapa titik: {result_multiple_points}")
 # Cek kekontinuan di seluruh domain [-10, 10]
 # Mengecek apakah fungsi f(x) = x^2 kontinu di seluruh interval [-10, 10]
 # Output: True jika kontinu di seluruh interval, False jika ada diskontinuitas
-result_everywhere = is_continuous_everywhere(lambda x: x**2, (-10, 10))
-print(f"Kontinuitas di seluruh domain [-10, 10]: {result_everywhere}") #True or False
+result_continuity_over_interval = is_continuous_everywhere(lambda x: x**2, (-10, 10))
+print(f"Kontinuitas di seluruh domain [-10, 10]: {result_continuity_over_interval}") #True or False
