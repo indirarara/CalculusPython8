@@ -10,6 +10,7 @@ def is_continuous(f, x, epsilon=1e-7):
     except ZeroDivisionError:
         print(f"Fungsi tidak terdefinisi di x={x} karena pembagian dengan nol.")
         return False
+    
     except Exception as e:
         print(f"Terjadi kesalahan: {e}")
         return False
